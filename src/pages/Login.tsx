@@ -42,7 +42,7 @@ const Login = () => {
               <Input
                 id="emailOrPhone"
                 type="text"
-                placeholder="example@email.com أو 0612345678"
+                placeholder="example@email.com"
                 value={emailOrPhone}
                 onChange={(e) => setEmailOrPhone(e.target.value)}
                 className="text-right"
