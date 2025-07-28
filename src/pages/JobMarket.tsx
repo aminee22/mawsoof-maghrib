@@ -1,83 +1,52 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { TrendingUp, Code, Heart, DollarSign, Users, Zap, ArrowRight, Home } from "lucide-react"
+import { Briefcase, GraduationCap, Building, Globe, ArrowRight, Home } from "lucide-react"
 import { Link } from "react-router-dom"
 
 const JobMarket = () => {
-  const inDemandJobs = [
+  const jobsByEducation = [
     {
-      title: "مطور البرمجيات",
-      description: "تطوير التطبيقات والمواقع الإلكترونية",
-      icon: <Code className="h-8 w-8" />,
-      demand: "عالي جداً",
-      salary: "15,000 - 40,000 درهم",
-      skills: ["JavaScript", "Python", "React", "قواعد البيانات"],
-      growth: "+25% سنوياً"
+      level: "📘 بدون شهادة",
+      icon: <Building className="h-8 w-8" />,
+      jobs: ["عمال البناء", "النظافة", "الحراسة", "التوصيل (Delivery)"]
     },
     {
-      title: "أخصائي التسويق الرقمي", 
-      description: "إدارة الحملات الإعلانية والتسويق عبر الإنترنت",
-      icon: <TrendingUp className="h-8 w-8" />,
-      demand: "عالي",
-      salary: "8,000 - 25,000 درهم",
-      skills: ["SEO/SEM", "وسائل التواصل", "Google Ads", "تحليل البيانات"],
-      growth: "+20% سنوياً"
+      level: "🎓 مستوى إعدادي / تأهيلي",
+      icon: <Briefcase className="h-8 w-8" />,
+      jobs: ["الميكانيك", "الكهرباء", "صباغة السيارات", "التبريد والتكييف", "الحلاقة والطبخ", "المهن اليدوية والفنية"]
     },
     {
-      title: "ممرض/ممرضة",
-      description: "الرعاية الصحية والطبية للمرضى",
-      icon: <Heart className="h-8 w-8" />,
-      demand: "عالي", 
-      salary: "6,000 - 15,000 درهم",
-      skills: ["رعاية طبية", "تواصل", "صبر", "دقة"],
-      growth: "+15% سنوياً"
+      level: "🎓 الباكالوريا",
+      icon: <GraduationCap className="h-8 w-8" />,
+      jobs: ["موظف إداري", "الشرطة والمخازنية", "القوات المسلحة الملكية", "الجمارك", "مراكز النداء (Call Center)", "التجارة والتسويق"]
     },
     {
-      title: "محاسب مالي",
-      description: "إدارة الحسابات والأمور المالية للشركات",
-      icon: <DollarSign className="h-8 w-8" />,
-      demand: "متوسط إلى عالي",
-      salary: "7,000 - 20,000 درهم", 
-      skills: ["محاسبة", "Excel", "تحليل مالي", "قانون ضريبي"],
-      growth: "+10% سنوياً"
+      level: "🎓 دبلوم عالي (BTS - DUT - إجازة...)",
+      icon: <GraduationCap className="h-8 w-8" />,
+      jobs: ["مهندس مساعد", "تقني في الإعلاميات أو الكهرباء", "محاسب", "مصمم جرافيك", "فني في الصيانة", "أستاذ التعليم الخصوصي"]
     },
     {
-      title: "مدير الموارد البشرية",
-      description: "إدارة الموظفين والتوظيف والتدريب",
-      icon: <Users className="h-8 w-8" />,
-      demand: "متوسط",
-      salary: "10,000 - 30,000 درهم",
-      skills: ["إدارة", "تواصل", "قانون العمل", "تدريب"],
-      growth: "+12% سنوياً"
-    },
-    {
-      title: "فني طاقة متجددة",
-      description: "تركيب وصيانة أنظمة الطاقة الشمسية والرياح",
-      icon: <Zap className="h-8 w-8" />,
-      demand: "عالي ومتنامي",
-      salary: "8,000 - 18,000 درهم",
-      skills: ["كهرباء", "ميكانيك", "طاقة شمسية", "صيانة"],
-      growth: "+30% سنوياً"
+      level: "🎓 الماستر والدكتوراه",
+      icon: <GraduationCap className="h-8 w-8" />,
+      jobs: ["أستاذ جامعي", "باحث علمي", "خبير استشاري"]
     }
   ]
 
-  const careerTips = [
-    {
-      title: "طور مهاراتك باستمرار",
-      description: "العالم يتغير بسرعة، فتأكد من تحديث مهاراتك دائماً",
-      tips: ["تعلم أونلاين", "احضر دورات تدريبية", "اقرأ في مجالك", "تواصل مع الخبراء"]
-    },
-    {
-      title: "ابني شبكة علاقات مهنية",
-      description: "العلاقات المهنية مفتاح النجاح في سوق العمل",
-      tips: ["شارك في الفعاليات", "استخدم LinkedIn", "انضم لجمعيات مهنية", "تطوع"]
-    },
-    {
-      title: "اكتسب خبرة عملية",
-      description: "الخبرة العملية لا تقل أهمية عن الشهادات",
-      tips: ["تدرب في الشركات", "اعمل مشاريع شخصية", "تطوع", "فريلانس"]
-    }
+  const requiredSkills = [
+    "🔑 التواصل الفعال",
+    "💻 أساسيات الكمبيوتر", 
+    "🌐 اللغات (الفرنسية – الإنجليزية)",
+    "🧾 كتابة السيرة الذاتية",
+    "🎤 التحضير لمقابلات العمل",
+    "🤝 المرونة والانضباط"
+  ]
+
+  const jobSources = [
+    { name: "ANAPEC", url: "https://www.anapec.org" },
+    { name: "Emploi Maroc", url: "https://www.emploimaroc.net" },
+    { name: "Indeed Maroc", url: "https://ma.indeed.com" },
+    { name: "ReKrute", url: "https://www.rekrute.com" }
   ]
 
   return (
@@ -85,71 +54,46 @@ const JobMarket = () => {
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="mb-8 text-center">
-          <Link to="/" className="inline-flex items-center gap-2 text-primary hover:text-primary-glow transition-smooth mb-4">
+          <Link to="/home" className="inline-flex items-center gap-2 text-primary hover:text-primary-glow transition-smooth mb-4">
             <Home className="h-5 w-5" />
             العودة للرئيسية
           </Link>
           <h1 className="text-4xl font-bold mb-4 gradient-hero bg-clip-text text-transparent">
-            سوق الشغل والفرص المهنية
+            سوق الشغل
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            اكتشف المهن المطلوبة في السوق المغربي وتعرف على كيفية تطوير مهاراتك
+            اكتشف الوظائف المتاحة والمهارات المطلوبة في سوق العمل المغربي
           </p>
         </div>
 
-        {/* In-Demand Jobs */}
+        {/* Jobs by Education Level */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-center mb-8 text-primary">المهن الأكثر طلباً</h2>
-          <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-6">
-            {inDemandJobs.map((job, index) => (
+          <h2 className="text-2xl font-bold text-center mb-8 text-primary">💼 الوظائف المطلوبة حسب المستوى الدراسي</h2>
+          <div className="space-y-6">
+            {jobsByEducation.map((category, index) => (
               <Card key={index} className="shadow-medium hover:shadow-strong transition-smooth">
                 <CardHeader>
-                  <div className="flex items-start gap-3">
-                    <div className="p-2 rounded-lg gradient-primary">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 rounded-full gradient-secondary">
                       <div className="text-white">
-                        {job.icon}
+                        {category.icon}
                       </div>
                     </div>
                     <div className="flex-1">
-                      <CardTitle className="text-lg mb-1">{job.title}</CardTitle>
-                      <CardDescription className="text-sm">
-                        {job.description}
-                      </CardDescription>
+                      <CardTitle className="text-xl mb-2">{category.level}</CardTitle>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium">الطلب:</span>
-                      <Badge variant="outline" className="border-secondary text-secondary">
-                        {job.demand}
-                      </Badge>
-                    </div>
-                    
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium">الراتب:</span>
-                      <span className="text-sm text-muted-foreground">{job.salary}</span>
-                    </div>
-                    
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium">النمو:</span>
-                      <span className="text-sm text-accent font-medium">{job.growth}</span>
-                    </div>
-                    
-                    <div>
-                      <h4 className="text-sm font-medium mb-2">المهارات المطلوبة:</h4>
-                      <div className="flex flex-wrap gap-1">
-                        {job.skills.map((skill, idx) => (
-                          <span 
-                            key={idx}
-                            className="px-2 py-1 bg-muted text-muted-foreground rounded text-xs"
-                          >
-                            {skill}
-                          </span>
-                        ))}
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+                    {category.jobs.map((job, idx) => (
+                      <div 
+                        key={idx}
+                        className="p-3 bg-accent/10 rounded-lg text-center"
+                      >
+                        <span className="text-sm font-medium text-foreground">{job}</span>
                       </div>
-                    </div>
+                    ))}
                   </div>
                 </CardContent>
               </Card>
@@ -157,57 +101,60 @@ const JobMarket = () => {
           </div>
         </div>
 
-        {/* Career Development Tips */}
+        {/* Required Skills */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-center mb-8 text-secondary">نصائح تطوير المسيرة المهنية</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {careerTips.map((tip, index) => (
-              <Card key={index} className="shadow-soft hover:shadow-medium transition-smooth">
-                <CardHeader>
-                  <CardTitle className="text-xl text-primary">{tip.title}</CardTitle>
-                  <CardDescription>{tip.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {tip.tips.map((item, idx) => (
-                      <li key={idx} className="text-sm text-muted-foreground flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 bg-accent rounded-full"></span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <h2 className="text-2xl font-bold text-center mb-8 text-secondary">🧠 مهارات مطلوبة في سوق الشغل</h2>
+          <Card className="shadow-medium">
+            <CardContent className="p-8">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {requiredSkills.map((skill, index) => (
+                  <div key={index} className="flex items-center gap-3 p-3 bg-primary/5 rounded-lg">
+                    <span className="text-lg">{skill}</span>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
         </div>
 
-        {/* Resources Section */}
+        {/* Job Sources */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-center mb-8 text-primary">📌 مصادر للبحث عن فرص العمل</h2>
+          <Card className="shadow-medium">
+            <CardContent className="p-8">
+              <div className="grid md:grid-cols-2 gap-4">
+                {jobSources.map((source, index) => (
+                  <a 
+                    key={index}
+                    href={source.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-4 border rounded-lg hover:bg-accent/10 transition-smooth group"
+                  >
+                    <div className="flex items-center gap-3">
+                      <Globe className="h-5 w-5 text-primary" />
+                      <span className="font-medium">{source.name}</span>
+                    </div>
+                    <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-smooth" />
+                  </a>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Call to Action */}
         <Card className="shadow-medium gradient-soft border-primary/20">
-          <CardHeader className="text-center">
-            <CardTitle className="text-2xl mb-4">ابدأ رحلتك المهنية اليوم</CardTitle>
-            <CardDescription className="text-lg">
-              استكشف الفرص واكتشف المسار الذي يناسب مهاراتك وطموحاتك
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="text-center">
-            <div className="grid md:grid-cols-2 gap-4 mb-6">
-              <Button variant="outline" size="lg" className="h-14">
-                دليل كتابة السيرة الذاتية
-              </Button>
-              <Button variant="outline" size="lg" className="h-14">
-                نصائح المقابلات الشخصية
-              </Button>
-              <Button variant="outline" size="lg" className="h-14">
-                مواقع البحث عن عمل
-              </Button>
-              <Button variant="outline" size="lg" className="h-14">
-                منصات التعلم المجاني
-              </Button>
-            </div>
-            <Button size="lg" className="gradient-primary hover:opacity-90 transition-smooth">
-              <ArrowRight className="mr-2 h-5 w-5" />
-              ابدأ تقييم مهاراتك
+          <CardContent className="p-8 text-center">
+            <h3 className="text-2xl font-bold mb-4">هل لديك سؤال؟</h3>
+            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+              إذا كان لديك أي استفسار حول سوق العمل أو تحتاج لمساعدة في اختيار مسارك المهني
+            </p>
+            <Button size="lg" className="gradient-primary hover:opacity-90 transition-smooth" asChild>
+              <a href="https://forms.gle/cifWM3Ty7vevX2vS8" target="_blank" rel="noopener noreferrer">
+                <ArrowRight className="mr-2 h-5 w-5" />
+                هل لديك سؤال؟
+              </a>
             </Button>
           </CardContent>
         </Card>
