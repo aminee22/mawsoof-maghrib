@@ -6,32 +6,36 @@ import { Link } from "react-router-dom"
 const PostMiddleSchool = () => {
   const tracks = [
     {
-      title: "المسار العلمي",
-      description: "رياضيات، فيزياء، كيمياء، علوم الحياة والأرض",
+      emoji: "🧠",
+      title: "الشعب العلمية",
       icon: <GraduationCap className="h-8 w-8" />,
-      subjects: ["الرياضيات", "الفيزياء والكيمياء", "علوم الحياة والأرض"],
-      careers: ["طبيب", "مهندس", "صيدلي", "بحث علمي"]
+      subjects: ["علوم الحياة والأرض", "العلوم الفيزيائية", "العلوم الرياضية"],
+      description: "مناسبة للتلاميذ الذين يحبون المواد العلمية، الرياضيات، والتجارب.",
+      careers: "الطب، الهندسة، الفيزياء، البيولوجيا..."
     },
     {
-      title: "المسار الأدبي",
-      description: "اللغات، التاريخ، الجغرافيا، الفلسفة",
+      emoji: "📚",
+      title: "الشعب الأدبية",
       icon: <BookOpen className="h-8 w-8" />,
-      subjects: ["اللغة العربية", "اللغات الأجنبية", "التاريخ والجغرافيا", "الفلسفة"],
-      careers: ["أستاذ", "صحفي", "مترجم", "دبلوماسي"]
+      subjects: ["شعبة الآداب", "شعبة العلوم الإنسانية"],
+      description: "مناسبة لمحبي اللغات، الفلسفة، والتاريخ.",
+      careers: "الصحافة، القانون، اللغات، العلوم الاجتماعية..."
     },
     {
-      title: "المسار التقني",
-      description: "علوم المهندس، تكنولوجيا المعلومات، الإلكترونيك",
+      emoji: "🛠️",
+      title: "الشعب التقنية والمهنية",
       icon: <Wrench className="h-8 w-8" />,
-      subjects: ["علوم المهندس", "الرياضيات التطبيقية", "المعلوماتية"],
-      careers: ["تقني متخصص", "مطور برمجيات", "فني صيانة"]
+      subjects: ["الإلكترونيات", "الكهرباء", "الإعلاميات", "التصميم الصناعي"],
+      description: "مناسبة لمن يفضلون الجانب التطبيقي والتقني.",
+      careers: "BTS، DUT، الهندسة التطبيقية، المدارس العليا للتكنولوجيا..."
     },
     {
-      title: "التكوين المهني",
-      description: "تعلم مهارات عملية ودخول سوق الشغل مباشرة",
+      emoji: "🏫",
+      title: "التكوين المهني (OFPPT)",
       icon: <Briefcase className="h-8 w-8" />,
-      subjects: ["تكوين تطبيقي", "تدريب ميداني", "مهارات مهنية"],
-      careers: ["حرفي متخصص", "تقني", "ريادي أعمال"]
+      subjects: ["كهرباء", "صباغة", "طبخ", "إعلاميات", "تصميم", "حلاقة..."],
+      description: "متاح مباشرة بعد الإعدادي أو البكالوريا. مناسب لمن يريد دخول سوق الشغل بسرعة.",
+      careers: "تكوين قصير، فرصة عمل سريعة، دبلومات معترف بها"
     }
   ]
 
@@ -53,28 +57,21 @@ const PostMiddleSchool = () => {
         </div>
 
         {/* Tracks Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="grid gap-8 mb-12">
           {tracks.map((track, index) => (
             <Card key={index} className="shadow-medium hover:shadow-strong transition-smooth">
               <CardHeader>
                 <div className="flex items-center gap-4">
-                  <div className="p-3 rounded-full gradient-primary">
-                    <div className="text-white">
-                      {track.icon}
-                    </div>
-                  </div>
+                  <div className="text-4xl">{track.emoji}</div>
                   <div>
                     <CardTitle className="text-2xl">{track.title}</CardTitle>
-                    <CardDescription className="text-lg">
-                      {track.description}
-                    </CardDescription>
                   </div>
                 </div>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   <div>
-                    <h4 className="font-semibold mb-2 text-primary">المواد الأساسية:</h4>
+                    <h4 className="font-semibold mb-2 text-primary">📚 تتضمن:</h4>
                     <ul className="list-disc list-inside text-muted-foreground space-y-1">
                       {track.subjects.map((subject, idx) => (
                         <li key={idx}>{subject}</li>
@@ -82,58 +79,38 @@ const PostMiddleSchool = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 text-secondary">المهن المحتملة:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {track.careers.map((career, idx) => (
-                        <span 
-                          key={idx}
-                          className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm"
-                        >
-                          {career}
-                        </span>
-                      ))}
-                    </div>
+                    <p className="text-muted-foreground">
+                      <span className="text-green-600 font-semibold">✅</span> {track.description}
+                    </p>
                   </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 text-secondary">🎓 فرص ما بعد البكالوريا:</h4>
+                    <p className="text-muted-foreground">{track.careers}</p>
+                  </div>
+                  {track.title === "التكوين المهني (OFPPT)" && (
+                    <div className="mt-4 p-4 bg-green-50 rounded-lg border border-green-200">
+                      <h4 className="font-semibold mb-2 text-green-700">🟢 مزايا:</h4>
+                      <p className="text-green-600">{track.careers}</p>
+                    </div>
+                  )}
                 </div>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        {/* Guidance Section */}
-        <Card className="shadow-medium gradient-soft border-primary/20">
-          <CardHeader className="text-center">
-            <CardTitle className="text-3xl mb-4">نصائح للاختيار الصحيح</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h4 className="font-bold text-xl mb-4 text-primary">اعرف نفسك:</h4>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>• ما هي المواد التي تحبها وتتفوق فيها؟</li>
-                  <li>• ما هي هواياتك واهتماماتك؟</li>
-                  <li>• هل تفضل العمل النظري أم التطبيقي؟</li>
-                  <li>• ما هي نقاط قوتك وضعفك؟</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-bold text-xl mb-4 text-secondary">استكشف الخيارات:</h4>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>• ابحث عن معلومات حول كل مسار</li>
-                  <li>• تحدث مع طلاب وخريجين</li>
-                  <li>• زر المعاهد والثانويات</li>
-                  <li>• استشر المرشد التربوي</li>
-                </ul>
-              </div>
-            </div>
-            <div className="text-center mt-8">
-              <Button size="lg" className="gradient-primary hover:opacity-90 transition-smooth">
-                <ArrowRight className="mr-2 h-5 w-5" />
-                ابدأ الاستبيان التوجيهي
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
+        {/* Question Button */}
+        <div className="text-center">
+          <a 
+            href="https://forms.gle/cifWM3Ty7vevX2vS8" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <Button size="lg" className="gradient-primary hover:opacity-90 transition-smooth">
+              💬 هل لديك سؤال؟
+            </Button>
+          </a>
+        </div>
       </div>
     </div>
   )
