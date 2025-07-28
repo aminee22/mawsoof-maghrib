@@ -107,7 +107,7 @@ const PostMiddleSchool = () => {
             rel="noopener noreferrer"
           >
             <Button size="lg" className="gradient-primary hover:opacity-90 transition-smooth">
-              💬 هل لديك سؤال؟
+              💬 استبيان؟
             </Button>
           </a>
         </div>
