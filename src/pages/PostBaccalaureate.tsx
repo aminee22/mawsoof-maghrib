@@ -5,65 +5,99 @@ import { University, Building2, Award, Users, ArrowRight, Home } from "lucide-re
 import { Link } from "react-router-dom"
 
 const PostBaccalaureate = () => {
-  const institutions = [
+  const sections = [
     {
-      title: "المدارس الوطنية للمهندسين (ENSA)",
-      description: "تكوين مهندسين في مختلف التخصصات",
+      title: "🎓 الدراسة الجامعية العمومية",
       icon: <University className="h-8 w-8" />,
-      duration: "5 سنوات",
-      entry: "مباراة وطنية",
-      specializations: ["الهندسة الإعلامية", "الهندسة المدنية", "هندسة الطيران", "الهندسة الصناعية"],
-      requirements: "باك علمي أو تقني بمعدل جيد"
+      content: (
+        <div className="space-y-4">
+          <div>
+            <h4 className="font-semibold mb-2 text-primary">📘 الكليات:</h4>
+            <ul className="text-muted-foreground space-y-1 mr-4">
+              <li>• كلية العلوم</li>
+              <li>• كلية الآداب</li>
+              <li>• كلية الحقوق</li>
+              <li>• كلية الاقتصاد</li>
+              <li>• كلية الشريعة</li>
+              <li>• كلية اللغة العربية</li>
+            </ul>
+          </div>
+          <div className="space-y-2">
+            <p className="text-sm">✅ تتطلب فقط شهادة الباكالوريا، بدون مباراة.</p>
+            <p className="text-sm">🔑 الدراسة غالبًا نظرية، مدة التكوين 3 سنوات (إجازة أساسية).</p>
+          </div>
+        </div>
+      )
     },
     {
-      title: "تقني متخصص (OFPPT)",
-      description: "تكوين تقني متخصص في مجالات متنوعة",
+      title: "🏫 المدارس والمعاهد العليا",
       icon: <Building2 className="h-8 w-8" />,
-      duration: "2 سنة",
-      entry: "ملف + مقابلة",
-      specializations: ["التجارة والتسويق", "السياحة والفندقة", "المعلوماتيات", "الصناعة"],
-      requirements: "باكالوريا أو مستوى باك"
+      content: (
+        <div className="space-y-4">
+          <div>
+            <h4 className="font-semibold mb-2 text-primary">🎯 تتطلب مباراة أو انتقاء:</h4>
+            <ul className="text-muted-foreground space-y-1 mr-4">
+              <li>• الأقسام التحضيرية CPGE</li>
+              <li>• المدارس الوطنية للعلوم التطبيقية ENSA</li>
+              <li>• المدرسة الوطنية للتجارة والتسيير ENCG</li>
+              <li>• المدرسة الوطنية العليا للفنون والمهن ENSAM</li>
+              <li>• معاهد التكوين في مهن التمريض ISPITS</li>
+              <li>• معهد الحسن الثاني للزراعة والبيطرة IAV</li>
+              <li>• المعهد الملكي للإدارة الترابية ISIC/ENSAE/IFG/EMI...</li>
+            </ul>
+          </div>
+          <div className="space-y-2">
+            <p className="text-sm">📌 هذه المدارس تعطي دبلومات عالية وفرص عمل قوية.</p>
+            <p className="text-sm">🕐 مدة التكوين غالبًا 5 سنوات أو أكثر.</p>
+          </div>
+        </div>
+      )
     },
     {
-      title: "شهادة التقني العالي (BTS)",
-      description: "تكوين تقني عالي متخصص",
+      title: "🛠️ التكوين المهني العالي",
       icon: <Award className="h-8 w-8" />,
-      duration: "2 سنة",
-      entry: "انتقاء على أساس النقط",
-      specializations: ["المحاسبة والتسيير", "التجارة الدولية", "المعلوماتيات التطبيقية"],
-      requirements: "باكالوريا بمعدل مقبول"
+      content: (
+        <div className="space-y-4">
+          <div>
+            <h4 className="font-semibold mb-2 text-primary">🔧 دبلومات BTS - DUT - DTS</h4>
+            <p className="text-muted-foreground text-sm mb-2">
+              ✅ تكوين تطبيقي في ميادين مثل: الإعلاميات، التسويق، الإلكترونيات، المحاسبة، الكهرباء...
+            </p>
+            <p className="text-sm">📌 مناسب لمن يفضل الجانب العملي ويريد دخول سوق الشغل بسرعة.</p>
+          </div>
+        </div>
+      )
     },
     {
-      title: "الكليات والجامعات",
-      description: "تعليم جامعي في تخصصات متنوعة",
+      title: "✈️ الدراسة في الخارج",
       icon: <Users className="h-8 w-8" />,
-      duration: "3-5 سنوات",
-      entry: "مفتوح أو انتقائي",
-      specializations: ["الطب", "الحقوق", "الاقتصاد", "الآداب والعلوم الإنسانية"],
-      requirements: "باكالوريا حسب التخصص"
-    }
-  ]
-
-  const guidanceSteps = [
-    {
-      step: "1",
-      title: "حدد ميولك",
-      description: "اكتشف ما تحب وما يثير اهتمامك"
+      content: (
+        <div className="space-y-4">
+          <div>
+            <p className="text-muted-foreground text-sm mb-2">
+              🌍 دول مثل فرنسا، ألمانيا، تركيا، كندا، إسبانيا...
+            </p>
+            <p className="text-sm mb-2">📌 تحتاج: معدل جيد + لغة + أحيانًا إمتحانات قبول.</p>
+            <p className="text-sm">🎓 منح حكومية أو خاصة متوفرة لبعض الدول.</p>
+          </div>
+        </div>
+      )
     },
     {
-      step: "2", 
-      title: "اعرف قدراتك",
-      description: "قيم نقاطك ومستواك الأكاديمي"
-    },
-    {
-      step: "3",
-      title: "ابحث عن المعلومات",
-      description: "تعرف على الخيارات المتاحة أمامك"
-    },
-    {
-      step: "4",
-      title: "اتخذ القرار",
-      description: "اختر المسار الذي يناسبك أكثر"
+      title: "❗ ماذا لو لم أنجح في الباك؟",
+      icon: <Award className="h-8 w-8" />,
+      content: (
+        <div className="space-y-4">
+          <div>
+            <h4 className="font-semibold mb-2 text-primary">✳️ لا تيأس! يمكنك:</h4>
+            <ul className="text-muted-foreground space-y-1 mr-4">
+              <li>• إعادة السنة لتحسين مستواك</li>
+              <li>• التوجه نحو التكوين المهني</li>
+              <li>• البدء في مشاريع صغيرة أو تعلم مهارات جديدة (برمجة، تصميم، لغات...)</li>
+            </ul>
+          </div>
+        </div>
+      )
     }
   ]
 
@@ -84,91 +118,41 @@ const PostBaccalaureate = () => {
           </p>
         </div>
 
-        {/* Guidance Steps */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold text-center mb-8 text-primary">خطوات التوجيه الصحيح</h2>
-          <div className="grid md:grid-cols-4 gap-6">
-            {guidanceSteps.map((step, index) => (
-              <Card key={index} className="text-center shadow-soft hover:shadow-medium transition-smooth">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
-                    {step.step}
-                  </div>
-                  <h3 className="font-bold mb-2">{step.title}</h3>
-                  <p className="text-sm text-muted-foreground">{step.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Institutions */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold text-center mb-8 text-secondary">المؤسسات والتخصصات</h2>
-          <div className="grid lg:grid-cols-2 gap-8">
-            {institutions.map((institution, index) => (
-              <Card key={index} className="shadow-medium hover:shadow-strong transition-smooth">
-                <CardHeader>
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-full gradient-secondary">
-                      <div className="text-white">
-                        {institution.icon}
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <CardTitle className="text-xl mb-2">{institution.title}</CardTitle>
-                      <CardDescription className="text-base">
-                        {institution.description}
-                      </CardDescription>
+        {/* Sections */}
+        <div className="mb-12 space-y-8">
+          {sections.map((section, index) => (
+            <Card key={index} className="shadow-medium hover:shadow-strong transition-smooth">
+              <CardHeader>
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-full gradient-secondary">
+                    <div className="text-white">
+                      {section.icon}
                     </div>
                   </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div className="flex gap-4 text-sm">
-                      <Badge variant="outline" className="border-primary text-primary">
-                        المدة: {institution.duration}
-                      </Badge>
-                      <Badge variant="outline" className="border-secondary text-secondary">
-                        الولوج: {institution.entry}
-                      </Badge>
-                    </div>
-                    
-                    <div>
-                      <h4 className="font-semibold mb-2 text-primary">الشروط:</h4>
-                      <p className="text-muted-foreground text-sm">{institution.requirements}</p>
-                    </div>
-                    
-                    <div>
-                      <h4 className="font-semibold mb-2 text-secondary">التخصصات:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {institution.specializations.map((spec, idx) => (
-                          <span 
-                            key={idx}
-                            className="px-2 py-1 bg-accent/20 text-accent-foreground rounded text-xs"
-                          >
-                            {spec}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
+                  <div className="flex-1">
+                    <CardTitle className="text-xl mb-2">{section.title}</CardTitle>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                {section.content}
+              </CardContent>
+            </Card>
+          ))}
         </div>
 
         {/* Call to Action */}
         <Card className="shadow-medium gradient-soft border-primary/20">
           <CardContent className="p-8 text-center">
-            <h3 className="text-2xl font-bold mb-4">هل تحتاج مساعدة في الاختيار؟</h3>
+            <h3 className="text-2xl font-bold mb-4">هل لديك سؤال؟</h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              أجب على استبياننا التفاعلي لتحديد المسار الأنسب حسب ميولك ونقاطك وأهدافك المهنية
+              إذا كان لديك أي استفسار أو تحتاج لمساعدة إضافية، لا تتردد في طرح سؤالك
             </p>
-            <Button size="lg" className="gradient-primary hover:opacity-90 transition-smooth">
-              <ArrowRight className="mr-2 h-5 w-5" />
-              ابدأ اختبار التوجيه
+            <Button size="lg" className="gradient-primary hover:opacity-90 transition-smooth" asChild>
+              <a href="https://forms.gle/cifWM3Ty7vevX2vS8" target="_blank" rel="noopener noreferrer">
+                <ArrowRight className="mr-2 h-5 w-5" />
+                هل لديك سؤال؟
+              </a>
             </Button>
           </CardContent>
         </Card>
