@@ -9,6 +9,7 @@ import PostMiddleSchool from "./pages/PostMiddleSchool";
 import PostBaccalaureate from "./pages/PostBaccalaureate";
 import JobMarket from "./pages/JobMarket";
 import PersonalTips from "./pages/PersonalTips";
+import UsefulResources from "./pages/UsefulResources";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/post-baccalaureate" element={<PostBaccalaureate />} />
           <Route path="/job-market" element={<JobMarket />} />
           <Route path="/personal-tips" element={<PersonalTips />} />
+          <Route path="/useful-resources" element={<UsefulResources />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
