@@ -1,6 +1,6 @@
 import { HeroCard } from "@/components/ui/hero-card"
 import { Button } from "@/components/ui/button"
-import { GraduationCap, University, Briefcase, MapPin, Phone, Mail } from "lucide-react"
+import { GraduationCap, University, Briefcase, BookOpen, Lightbulb, MapPin, Phone, Mail } from "lucide-react"
 import { Link } from "react-router-dom"
 
 const Index = () => {
@@ -33,7 +33,7 @@ const Index = () => {
           اختر مرحلتك التعليمية
         </h2>
         
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-16">
           <Link to="/post-middle-school">
             <HeroCard
               title="ما بعد الإعدادي"
@@ -58,6 +58,24 @@ const Index = () => {
               description="استكشف الفرص المهنية والمهن المطلوبة في السوق المغربي"
               icon={<Briefcase />}
               gradient="hero"
+            />
+          </Link>
+
+          <Link to="/useful-resources">
+            <HeroCard
+              title="الموارد المفيدة"
+              description="روابط ومصادر تعليمية وتوجيهية تساعد الطلاب في اكتشاف الفرص الدراسية والمهنية"
+              icon={<BookOpen />}
+              gradient="secondary"
+            />
+          </Link>
+
+          <Link to="/personal-tips">
+            <HeroCard
+              title="نصائح شخصية"
+              description="نصائح موجهة من خبراء التوجيه الدراسي لمساعدتك في اختيار المسار الأنسب حسب قدراتك واهتماماتك"
+              icon={<Lightbulb />}
+              gradient="primary"
             />
           </Link>
         </div>
