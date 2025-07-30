@@ -127,13 +127,31 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Noto Sans Arabic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-feature-settings: "liga" 1, "kern" 1;
   }
 
   /* RTL Support for Arabic */
   .rtl {
     direction: rtl;
     text-align: right;
+    font-feature-settings: "liga" 1, "kern" 1, "calt" 1;
+  }
+
+  /* Enhanced animations */
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   /* Custom utility classes */

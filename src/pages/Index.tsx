@@ -26,30 +26,30 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-background rtl">
       {/* Hero Section */}
       <section 
-        className="relative py-32 text-center overflow-hidden"
+        className="relative py-40 text-center overflow-hidden"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url(${heroBackground})`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url(${heroBackground})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed'
         }}
       >
-        <div className="relative z-10 max-w-4xl mx-auto px-6">
-          <h1 className="text-7xl font-bold text-white mb-8 drop-shadow-2xl">
+        <div className="relative z-10 max-w-5xl mx-auto px-6 animate-fade-in-up">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 drop-shadow-2xl leading-tight">
             بوابة التوجيه التربوي
           </h1>
-          <p className="text-2xl text-white/95 mb-10 leading-relaxed max-w-3xl mx-auto drop-shadow-lg">
-            منصة شاملة لتوجيه الطلاب المغاربة نحو أفضل الخيارات الدراسية والمهنية
+          <p className="text-xl md:text-2xl text-white/95 mb-12 leading-relaxed max-w-4xl mx-auto drop-shadow-lg">
+            منصة شاملة لتوجيه الطلاب المغاربة نحو أفضل الخيارات الدراسية والمهنية مع أحدث المعلومات والموارد التعليمية
           </p>
           <div className="flex gap-6 justify-center flex-wrap">
             <Link to="/post-middle-school">
-              <Button size="lg" className="gradient-primary text-white hover:scale-105 shadow-elegant px-10 py-4 text-lg font-semibold transition-smooth border-0">
-                ابدأ رحلة التوجيه
+              <Button size="lg" className="gradient-primary text-white hover:scale-110 shadow-elegant px-12 py-5 text-xl font-bold transition-smooth border-0 rounded-full hover:shadow-glow">
+                🎯 ابدأ رحلة التوجيه
               </Button>
             </Link>
             <Link to="/useful-resources">
-              <Button size="lg" variant="outline" className="text-white border-2 border-white hover:bg-white/20 hover:scale-105 backdrop-blur-sm px-10 py-4 text-lg font-semibold transition-smooth">
-                تعرف أكثر
+              <Button size="lg" variant="outline" className="text-white border-2 border-white hover:bg-white/30 hover:scale-110 backdrop-blur-sm px-12 py-5 text-xl font-bold transition-smooth rounded-full">
+                📚 تعرف أكثر
               </Button>
             </Link>
           </div>
@@ -73,47 +73,47 @@ const Index = () => {
             استكشف الخيارات المتاحة أمامك واتخذ القرار الصحيح لمستقبلك
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
-            <Link to="/post-middle-school">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 animate-fade-in-up">
+            <Link to="/post-middle-school" className="transform transition-all duration-300 hover:-translate-y-2">
               <HeroCard
-                title="ما بعد الإعدادي"
-                description="تعرف على الشعب والمسارات المتاحة بعد إنهاء المرحلة الإعدادية"
+                title="🎓 ما بعد الإعدادي"
+                description="تعرف على الشعب والمسارات المتاحة بعد إنهاء المرحلة الإعدادية وحدد مستقبلك التعليمي"
                 icon={<School />}
                 gradient="primary"
               />
             </Link>
             
-            <Link to="/post-baccalaureate">
+            <Link to="/post-baccalaureate" className="transform transition-all duration-300 hover:-translate-y-2">
               <HeroCard
-                title="ما بعد الباكالوريا"
-                description="اكتشف الجامعات والمعاهد العليا والمسارات المهنية المتاحة"
+                title="🏆 ما بعد الباكالوريا"
+                description="اكتشف الجامعات والمعاهد العليا والمسارات المهنية المتاحة واختر التخصص المناسب"
                 icon={<Award />}
                 gradient="secondary"
               />
             </Link>
             
-            <Link to="/job-market">
+            <Link to="/job-market" className="transform transition-all duration-300 hover:-translate-y-2">
               <HeroCard
-                title="سوق الشغل"
-                description="تعرف على الفرص المهنية والوظائف المطلوبة في السوق المغربي"
+                title="💼 سوق الشغل"
+                description="تعرف على الفرص المهنية والوظائف المطلوبة في السوق المغربي والمهارات المطلوبة"
                 icon={<Target />}
                 gradient="hero"
               />
             </Link>
 
-            <Link to="/useful-resources">
+            <Link to="/useful-resources" className="transform transition-all duration-300 hover:-translate-y-2">
               <HeroCard
-                title="الموارد المفيدة"
+                title="📚 الموارد المفيدة"
                 description="روابط ومصادر تعليمية وتوجيهية تساعد الطلاب في اكتشاف الفرص الدراسية والمهنية"
                 icon={<Library />}
                 gradient="primary"
               />
             </Link>
 
-            <Link to="/personal-tips">
+            <Link to="/personal-tips" className="transform transition-all duration-300 hover:-translate-y-2">
               <HeroCard
-                title="نصائح شخصية"
-                description="نصائح موجهة من خبراء التوجيه الدراسي لمساعدتك في اختيار المسار الأنسب حسب قدراتك واهتماماتك"
+                title="💡 نصائح شخصية"
+                description="نصائح موجهة من خبراء التوجيه الدراسي لمساعدتك في اختيار المسار الأنسب حسب قدراتك"
                 icon={<Lightbulb />}
                 gradient="secondary"
               />
