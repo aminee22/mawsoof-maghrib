@@ -23,7 +23,7 @@ import careerBg from "@/assets/career-bg.jpg"
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background rtl">
+    <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-background rtl">
       {/* Hero Section */}
       <section 
         className="relative py-32 text-center overflow-hidden"
@@ -42,12 +42,16 @@ const Index = () => {
             منصة شاملة لتوجيه الطلاب المغاربة نحو أفضل الخيارات الدراسية والمهنية
           </p>
           <div className="flex gap-6 justify-center flex-wrap">
-            <Button size="lg" className="bg-white text-primary hover:bg-white/90 shadow-elegant px-10 py-4 text-lg font-semibold">
-              ابدأ رحلة التوجيه
-            </Button>
-            <Button size="lg" variant="outline" className="text-white border-2 border-white hover:bg-white/20 backdrop-blur-sm px-10 py-4 text-lg font-semibold">
-              تعرف أكثر
-            </Button>
+            <Link to="/post-middle-school">
+              <Button size="lg" className="gradient-primary text-white hover:scale-105 shadow-elegant px-10 py-4 text-lg font-semibold transition-smooth border-0">
+                ابدأ رحلة التوجيه
+              </Button>
+            </Link>
+            <Link to="/useful-resources">
+              <Button size="lg" variant="outline" className="text-white border-2 border-white hover:bg-white/20 hover:scale-105 backdrop-blur-sm px-10 py-4 text-lg font-semibold transition-smooth">
+                تعرف أكثر
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
