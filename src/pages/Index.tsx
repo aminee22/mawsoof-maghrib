@@ -1,115 +1,170 @@
 import { HeroCard } from "@/components/ui/hero-card"
 import { Button } from "@/components/ui/button"
-import { GraduationCap, University, Briefcase, BookOpen, Lightbulb, MapPin, Phone, Mail } from "lucide-react"
+import { 
+  GraduationCap, 
+  University, 
+  Briefcase, 
+  BookOpen, 
+  Lightbulb, 
+  MapPin, 
+  Phone, 
+  Mail,
+  School,
+  Target,
+  Library,
+  Users,
+  TrendingUp,
+  Award
+} from "lucide-react"
 import { Link } from "react-router-dom"
+import heroBackground from "@/assets/hero-background.jpg"
+import educationBg from "@/assets/education-bg.jpg"
+import careerBg from "@/assets/career-bg.jpg"
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-soft rtl">
+    <div className="min-h-screen bg-background rtl">
       {/* Hero Section */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 gradient-hero opacity-10"></div>
-        <div className="relative container mx-auto px-4 py-16 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 gradient-hero bg-clip-text text-transparent">
+      <section 
+        className="relative py-32 text-center overflow-hidden"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url(${heroBackground})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <div className="relative z-10 max-w-4xl mx-auto px-6">
+          <h1 className="text-7xl font-bold text-white mb-8 drop-shadow-2xl">
             بوابة التوجيه التربوي
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-            منصة شاملة لمساعدة الطلاب المغاربة في اختيار مسارهم الدراسي والمهني المناسب
+          <p className="text-2xl text-white/95 mb-10 leading-relaxed max-w-3xl mx-auto drop-shadow-lg">
+            منصة شاملة لتوجيه الطلاب المغاربة نحو أفضل الخيارات الدراسية والمهنية
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="gradient-primary hover:opacity-90 transition-smooth px-8 py-4">
+          <div className="flex gap-6 justify-center flex-wrap">
+            <Button size="lg" className="bg-white text-primary hover:bg-white/90 shadow-elegant px-10 py-4 text-lg font-semibold">
               ابدأ رحلة التوجيه
             </Button>
-            <Button variant="outline" size="lg" className="px-8 py-4">
+            <Button size="lg" variant="outline" className="text-white border-2 border-white hover:bg-white/20 backdrop-blur-sm px-10 py-4 text-lg font-semibold">
               تعرف أكثر
             </Button>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Main Navigation Cards */}
-      <div className="container mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-          اختر مرحلتك التعليمية
-        </h2>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-16">
-          <Link to="/post-middle-school">
-            <HeroCard
-              title="ما بعد الإعدادي"
-              description="اكتشف المسارات المتاحة في الثانوية واختر ما يناسب ميولك وقدراتك"
-              icon={<GraduationCap />}
-              gradient="primary"
-            />
-          </Link>
+      {/* Navigation Cards */}
+      <section 
+        className="relative py-20 overflow-hidden"
+        style={{
+          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9)), url(${educationBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <h2 className="text-5xl font-bold text-center text-foreground mb-6">
+            اختر مسارك التعليمي
+          </h2>
+          <p className="text-center text-muted-foreground mb-16 text-xl max-w-3xl mx-auto">
+            استكشف الخيارات المتاحة أمامك واتخذ القرار الصحيح لمستقبلك
+          </p>
           
-          <Link to="/post-baccalaureate">
-            <HeroCard
-              title="ما بعد الباكالوريا"
-              description="تعرف على الجامعات والمعاهد والتخصصات المتاحة لك"
-              icon={<University />}
-              gradient="secondary"
-            />
-          </Link>
-          
-          <Link to="/job-market">
-            <HeroCard
-              title="سوق الشغل"
-              description="استكشف الفرص المهنية والمهن المطلوبة في السوق المغربي"
-              icon={<Briefcase />}
-              gradient="hero"
-            />
-          </Link>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+            <Link to="/post-middle-school">
+              <HeroCard
+                title="ما بعد الإعدادي"
+                description="تعرف على الشعب والمسارات المتاحة بعد إنهاء المرحلة الإعدادية"
+                icon={<School />}
+                gradient="primary"
+              />
+            </Link>
+            
+            <Link to="/post-baccalaureate">
+              <HeroCard
+                title="ما بعد الباكالوريا"
+                description="اكتشف الجامعات والمعاهد العليا والمسارات المهنية المتاحة"
+                icon={<Award />}
+                gradient="secondary"
+              />
+            </Link>
+            
+            <Link to="/job-market">
+              <HeroCard
+                title="سوق الشغل"
+                description="تعرف على الفرص المهنية والوظائف المطلوبة في السوق المغربي"
+                icon={<Target />}
+                gradient="hero"
+              />
+            </Link>
 
-          <Link to="/useful-resources">
-            <HeroCard
-              title="الموارد المفيدة"
-              description="روابط ومصادر تعليمية وتوجيهية تساعد الطلاب في اكتشاف الفرص الدراسية والمهنية"
-              icon={<BookOpen />}
-              gradient="secondary"
-            />
-          </Link>
+            <Link to="/useful-resources">
+              <HeroCard
+                title="الموارد المفيدة"
+                description="روابط ومصادر تعليمية وتوجيهية تساعد الطلاب في اكتشاف الفرص الدراسية والمهنية"
+                icon={<Library />}
+                gradient="primary"
+              />
+            </Link>
 
-          <Link to="/personal-tips">
-            <HeroCard
-              title="نصائح شخصية"
-              description="نصائح موجهة من خبراء التوجيه الدراسي لمساعدتك في اختيار المسار الأنسب حسب قدراتك واهتماماتك"
-              icon={<Lightbulb />}
-              gradient="primary"
-            />
-          </Link>
+            <Link to="/personal-tips">
+              <HeroCard
+                title="نصائح شخصية"
+                description="نصائح موجهة من خبراء التوجيه الدراسي لمساعدتك في اختيار المسار الأنسب حسب قدراتك واهتماماتك"
+                icon={<Lightbulb />}
+                gradient="secondary"
+              />
+            </Link>
+          </div>
         </div>
+      </section>
 
-        {/* Features Section */}
-        <div className="text-center mb-16">
-          <h3 className="text-2xl font-bold mb-8 text-primary">لماذا تختار منصتنا؟</h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-6">
-              <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                <GraduationCap className="h-8 w-8 text-white" />
+      {/* Features Section */}
+      <section 
+        className="relative py-20 overflow-hidden"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.03)), url(${careerBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <h2 className="text-5xl font-bold text-center text-foreground mb-16">
+            لماذا تختار منصتنا؟
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className="text-center p-10 rounded-3xl bg-white/90 backdrop-blur-sm shadow-elegant hover:shadow-strong transition-smooth border border-primary/10">
+              <div className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full gradient-primary shadow-lg">
+                <Users className="text-white h-10 w-10" />
               </div>
-              <h4 className="font-bold mb-2">توجيه متخصص</h4>
-              <p className="text-muted-foreground">نصائح وإرشادات من خبراء التوجيه التربوي</p>
+              <h3 className="text-3xl font-bold text-foreground mb-6">توجيه متخصص</h3>
+              <p className="text-muted-foreground leading-relaxed text-lg">
+                احصل على إرشادات من خبراء في التوجيه المدرسي والمهني
+              </p>
             </div>
             
-            <div className="p-6">
-              <div className="w-16 h-16 bg-gradient-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                <University className="h-8 w-8 text-white" />
+            <div className="text-center p-10 rounded-3xl bg-white/90 backdrop-blur-sm shadow-elegant hover:shadow-strong transition-smooth border border-accent/10">
+              <div className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full gradient-secondary shadow-lg">
+                <TrendingUp className="text-white h-10 w-10" />
               </div>
-              <h4 className="font-bold mb-2">معلومات محدثة</h4>
-              <p className="text-muted-foreground">أحدث المعلومات عن الجامعات والمعاهد</p>
+              <h3 className="text-3xl font-bold text-foreground mb-6">معلومات محدثة</h3>
+              <p className="text-muted-foreground leading-relaxed text-lg">
+                آخر المستجدات حول الجامعات والمعاهد وسوق العمل في المغرب
+              </p>
             </div>
             
-            <div className="p-6">
-              <div className="w-16 h-16 bg-gradient-hero rounded-full flex items-center justify-center mx-auto mb-4">
-                <Briefcase className="h-8 w-8 text-white" />
+            <div className="text-center p-10 rounded-3xl bg-white/90 backdrop-blur-sm shadow-elegant hover:shadow-strong transition-smooth border border-primary/10">
+              <div className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full gradient-hero shadow-lg">
+                <Award className="text-white h-10 w-10" />
               </div>
-              <h4 className="font-bold mb-2">فرص مهنية</h4>
-              <p className="text-muted-foreground">تعرف على أحدث الفرص في سوق العمل</p>
+              <h3 className="text-3xl font-bold text-foreground mb-6">فرص مهنية</h3>
+              <p className="text-muted-foreground leading-relaxed text-lg">
+                اكتشف المهن الواعدة والمسارات المطلوبة في المستقبل
+              </p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Footer */}
       <footer className="bg-card border-t">
