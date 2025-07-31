@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { University, Building2, Award, Users, ArrowRight, Home } from "lucide-react"
-import { Link } from "react-router-dom"
+import { BackButton } from "@/components/ui/back-button"
+import { University, Building2, Award, Users, ArrowRight } from "lucide-react"
 
 const PostBaccalaureate = () => {
   const sections = [
@@ -105,17 +105,18 @@ const PostBaccalaureate = () => {
     <div className="min-h-screen bg-gradient-soft rtl">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
-        <div className="mb-8 text-center">
-          <Link to="/" className="inline-flex items-center gap-2 text-primary hover:text-primary-glow transition-smooth mb-4">
-            <Home className="h-5 w-5" />
-            العودة للرئيسية
-          </Link>
+        <div className="mb-8">
+          <div className="mb-6">
+            <BackButton label="العودة للسابق" />
+          </div>
+          <div className="text-center">
           <h1 className="text-4xl font-bold mb-4 gradient-hero bg-clip-text text-transparent">
             التوجيه ما بعد الباكالوريا
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             اكتشف الخيارات المتاحة أمامك واختر المسار الذي يحقق طموحاتك المهنية
           </p>
+          </div>
         </div>
 
         {/* Sections */}

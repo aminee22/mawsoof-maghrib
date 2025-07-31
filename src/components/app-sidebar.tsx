@@ -1,4 +1,4 @@
-import { Home, GraduationCap, University, Briefcase, BookOpen, Lightbulb, HelpCircle, Star } from "lucide-react"
+import { Home, GraduationCap, University, Briefcase, BookOpen, Lightbulb, HelpCircle, Star, Menu } from "lucide-react"
 import { NavLink, useLocation } from "react-router-dom"
 
 import {
@@ -32,7 +32,7 @@ export function AppSidebar() {
 
   const isActive = (path: string) => currentPath === path
   const getNavCls = ({ isActive }: { isActive: boolean }) =>
-    isActive ? "bg-muted text-primary font-medium" : "hover:bg-muted/50"
+    isActive ? "bg-primary/10 text-primary font-semibold border-l-2 border-primary" : "hover:bg-accent/10 transition-all duration-200"
 
   const handleQuestionClick = () => {
     window.open("https://forms.gle/cifWM3Ty7vevX2vS8", "_blank");
@@ -40,31 +40,47 @@ export function AppSidebar() {
 
   return (
     <Sidebar
-      className={open ? "w-64" : "w-14"}
+      className={`border-l shadow-lg ${open ? "w-72" : "w-16"}`}
       collapsible="icon"
     >
-      <SidebarHeader className="p-4">
-        <div className="flex items-center gap-2">
-          <GraduationCap className="h-6 w-6 text-primary" />
+      <SidebarHeader className="p-6 border-b bg-gradient-to-r from-primary/5 to-secondary/5">
+        <div className="flex items-center gap-3">
+          <div className="p-2 rounded-lg bg-primary/10">
+            <GraduationCap className="h-6 w-6 text-primary" />
+          </div>
           {open && (
-            <h2 className="text-lg font-semibold text-primary">
-              دليل التوجيه
-            </h2>
+            <div>
+              <h2 className="text-lg font-bold text-primary">
+                دليل التوجيه
+              </h2>
+              <p className="text-xs text-muted-foreground">نحو مستقبل أفضل</p>
+            </div>
           )}
         </div>
       </SidebarHeader>
 
-      <SidebarContent>
+      <SidebarContent className="py-4">
         <SidebarGroup>
-          <SidebarGroupLabel>القائمة الرئيسية</SidebarGroupLabel>
+          <SidebarGroupLabel className="px-6 text-xs font-semibold text-secondary mb-3">
+            القائمة الرئيسية
+          </SidebarGroupLabel>
           <SidebarGroupContent>
-            <SidebarMenu>
+            <SidebarMenu className="space-y-1 px-3">
               {navigationItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <NavLink to={item.url} className={getNavCls}>
-                      <item.icon className="h-4 w-4" />
-                      {open && <span className="text-right">{item.title}</span>}
+                  <SidebarMenuButton asChild className="h-12 rounded-xl">
+                    <NavLink 
+                      to={item.url} 
+                      className={`${getNavCls({ isActive: isActive(item.url) })} flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-200`}
+                    >
+                      <div className={`p-2 rounded-lg ${isActive(item.url) ? 'bg-primary text-white' : 'bg-accent/20'}`}>
+                        <item.icon className="h-4 w-4" />
+                      </div>
+                      {open && (
+                        <span className="text-sm font-medium text-right flex-1">
+                          {item.title}
+                        </span>
+                      )}
                     </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -73,13 +89,22 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
 
-        <SidebarGroup>
+        <SidebarGroup className="mt-8">
           <SidebarGroupContent>
-            <SidebarMenu>
+            <SidebarMenu className="px-3">
               <SidebarMenuItem>
-                <SidebarMenuButton onClick={handleQuestionClick}>
-                  <HelpCircle className="h-4 w-4" />
-                  {open && <span className="text-right">هل لديك سؤال؟</span>}
+                <SidebarMenuButton 
+                  onClick={handleQuestionClick}
+                  className="h-12 rounded-xl bg-gradient-to-r from-secondary/10 to-primary/10 hover:from-secondary/20 hover:to-primary/20 transition-all duration-200"
+                >
+                  <div className="p-2 rounded-lg bg-secondary/20">
+                    <HelpCircle className="h-4 w-4 text-secondary" />
+                  </div>
+                  {open && (
+                    <span className="text-sm font-medium text-right flex-1">
+                      هل لديك سؤال؟
+                    </span>
+                  )}
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>
