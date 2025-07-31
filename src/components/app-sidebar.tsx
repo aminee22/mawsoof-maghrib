@@ -1,4 +1,4 @@
-import { Home, GraduationCap, University, Briefcase, BookOpen, Lightbulb, HelpCircle, Star, Menu } from "lucide-react"
+import { Home, GraduationCap, University, Briefcase, BookOpen, Lightbulb, HelpCircle, Star, Heart, Menu } from "lucide-react"
 import { NavLink, useLocation } from "react-router-dom"
 
 import {
@@ -21,6 +21,7 @@ const navigationItems = [
   { title: "ما بعد الباكالوريا", url: "/post-baccalaureate", icon: University },
   { title: "سوق الشغل", url: "/job-market", icon: Briefcase },
   { title: "الموارد المفيدة", url: "/useful-resources", icon: BookOpen },
+  { title: "اختر اهتماماتك", url: "/choose-interests", icon: Heart },
   { title: "نصائح شخصية", url: "/personal-tips", icon: Lightbulb },
   { title: "محفوظاتي", url: "/favorites", icon: Star },
 ]

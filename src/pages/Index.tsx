@@ -42,7 +42,7 @@ const Index = () => {
             منصة شاملة لتوجيه الطلاب المغاربة نحو أفضل الخيارات الدراسية والمهنية مع أحدث المعلومات والموارد التعليمية
           </p>
           <div className="flex gap-6 justify-center flex-wrap">
-            <Link to="/post-middle-school">
+            <Link to="/choose-interests">
               <Button size="lg" className="gradient-primary text-white hover:scale-110 shadow-elegant px-12 py-5 text-xl font-bold transition-smooth border-0 rounded-full hover:shadow-glow">
                 🎯 ابدأ رحلة التوجيه
               </Button>

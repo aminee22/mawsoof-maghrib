@@ -12,6 +12,8 @@ import PostBaccalaureate from "./pages/PostBaccalaureate";
 import JobMarket from "./pages/JobMarket";
 import PersonalTips from "./pages/PersonalTips";
 import UsefulResources from "./pages/UsefulResources";
+import ChooseInterests from "./pages/ChooseInterests";
+import InterestDetail from "./pages/InterestDetail";
 import Favorites from "./pages/Favorites";
 import NotFound from "./pages/NotFound";
 
@@ -40,6 +42,8 @@ const App = () => (
                     <Route path="/job-market" element={<JobMarket />} />
                     <Route path="/personal-tips" element={<PersonalTips />} />
                     <Route path="/useful-resources" element={<UsefulResources />} />
+                    <Route path="/choose-interests" element={<ChooseInterests />} />
+                    <Route path="/interests/:id" element={<InterestDetail />} />
                     <Route path="/favorites" element={<Favorites />} />
                     {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                     <Route path="*" element={<NotFound />} />
