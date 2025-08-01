@@ -7,31 +7,76 @@ import { MapPin, ExternalLink, Heart, Users } from "lucide-react"
 
 const interestData = {
   "life-sciences": {
-    title: "علوم الحياة والطبيعة",
-    description: "مجال علوم الحياة والطبيعة يفتح أمامك أبواب فهم الكائنات الحية والبيئة المحيطة بنا. يشمل دراسة البيولوجيا، الكيمياء، علوم البيئة، والطب.",
+    title: "علوم الحياة والطبيعة (SVT)",
+    description: "إذا كنت شغوفاً باكتشاف الكائنات الحية، وفهم البيئة، أو تحلم بمهنة في الطب أو العلوم، فإن مسار 'علوم الحياة والطبيعة' قد يكون مثالياً لك.",
     image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?w=800&h=400&fit=crop",
+    introduction: "🧭 إذا كنت شغوفاً باكتشاف الكائنات الحية، وفهم البيئة، أو تحلم بمهنة في الطب أو العلوم، فإن مسار 'علوم الحياة والطبيعة' قد يكون مثالياً لك.",
+    advice: "💡 إذا كنت فضولياً ومحللاً وتحب فهم العالم الحي أو مساعدة الناس، فهذا المجال مليء بالفرص المثيرة والهادفة. الشغف + التفاني = النجاح!",
     pathways: [
       {
-        name: "الطب البشري",
-        description: "دراسة جسم الإنسان وعلاج الأمراض",
+        name: "الطب العام",
+        description: "دراسة جسم الإنسان وعلاج الأمراض والوقاية منها",
         duration: "7 سنوات",
         difficulty: "عالي",
-        institutions: ["كلية الطب - جامعة محمد الخامس", "كلية الطب - جامعة الحسن الثاني"]
+        institutions: ["كليات الطب (FMP) - متوفرة في المدن الكبرى"]
+      },
+      {
+        name: "الصيدلة",
+        description: "دراسة الأدوية وتركيبها وتأثيراتها العلاجية",
+        duration: "6 سنوات",
+        difficulty: "عالي",
+        institutions: ["كليات الصيدلة في المدن الرئيسية"]
+      },
+      {
+        name: "طب الأسنان",
+        description: "تشخيص وعلاج أمراض الفم والأسنان",
+        duration: "6 سنوات",
+        difficulty: "عالي",
+        institutions: ["كليات طب الأسنان"]
+      },
+      {
+        name: "الطب البيطري",
+        description: "علاج الحيوانات والوقاية من الأمراض الحيوانية",
+        duration: "5-6 سنوات",
+        difficulty: "عالي",
+        institutions: ["معهد الحسن الثاني للزراعة والطب البيطري (IAV - الرباط)"]
       },
       {
         name: "علوم البيولوجيا",
         description: "دراسة الكائنات الحية والعمليات الحيوية",
         duration: "3-5 سنوات",
         difficulty: "متوسط",
-        institutions: ["كلية العلوم - جامعة الرباط", "كلية العلوم - جامعة فاس"]
+        institutions: ["كليات العلوم (FS)"]
       },
       {
-        name: "الصيدلة",
-        description: "دراسة الأدوية وتركيبها وتأثيراتها",
-        duration: "6 سنوات",
-        difficulty: "عالي",
-        institutions: ["كلية الصيدلة - الدار البيضاء", "كلية الصيدلة - الرباط"]
+        name: "علوم الجيولوجيا",
+        description: "دراسة الأرض وتكوينها والموارد الطبيعية",
+        duration: "3-5 سنوات",
+        difficulty: "متوسط",
+        institutions: ["كليات العلوم (FS)"]
+      },
+      {
+        name: "الزراعة والهندسة الزراعية",
+        description: "تطوير الإنتاج الزراعي والتقنيات الزراعية الحديثة",
+        duration: "5 سنوات",
+        difficulty: "متوسط إلى عالي",
+        institutions: ["المدارس الوطنية للزراعة (ENAM - مكناس)", "معهد الحسن الثاني (IAV - الرباط)"]
+      },
+      {
+        name: "علوم البيئة",
+        description: "دراسة البيئة وحمايتها وإدارة الموارد الطبيعية",
+        duration: "3-5 سنوات",
+        difficulty: "متوسط",
+        institutions: ["كليات العلوم", "المدارس العليا للتكنولوجيا (EST)", "ENSA / FST"]
       }
+    ],
+    careers: [
+      "طبيب / صيدلي / طبيب أسنان",
+      "مدرس علوم الأحياء / باحث علمي",
+      "مهندس بيئي أو زراعي",
+      "مختبرات التحليل البيولوجي",
+      "وظائف متعلقة بالموارد الطبيعية",
+      "العمل في المنظمات البيئية أو الصحية"
     ]
   },
   "mathematics": {
@@ -253,6 +298,20 @@ export default function InterestDetail() {
           <BackButton className="bg-background/80 backdrop-blur-sm" />
         </div>
 
+        {/* Introduction Section */}
+        {(interest as any).introduction && (
+          <Card className="mb-8 shadow-elegant bg-card/80 backdrop-blur-sm">
+            <CardHeader>
+              <CardTitle className="text-2xl text-right text-foreground">🧭 مقدمة</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-lg text-muted-foreground text-right leading-relaxed">
+                {(interest as any).introduction}
+              </p>
+            </CardContent>
+          </Card>
+        )}
+
         <Card className="mb-8 shadow-elegant bg-card/80 backdrop-blur-sm">
           <CardHeader>
             <CardTitle className="text-2xl text-right text-foreground">نبذة عن المجال</CardTitle>
@@ -320,6 +379,38 @@ export default function InterestDetail() {
             ))}
           </div>
         </div>
+
+        {/* Career Opportunities Section */}
+        {(interest as any).careers && (
+          <Card className="mb-8 shadow-elegant bg-card/80 backdrop-blur-sm">
+            <CardHeader>
+              <CardTitle className="text-2xl text-right text-foreground">💼 الفرص المهنية</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {(interest as any).careers.map((career: string, index: number) => (
+                  <div key={index} className="flex items-center justify-end p-3 bg-muted/30 rounded-lg">
+                    <span className="text-muted-foreground text-right">{career}</span>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Personal Advice Section */}
+        {(interest as any).advice && (
+          <Card className="mb-8 shadow-elegant bg-card/80 backdrop-blur-sm">
+            <CardHeader>
+              <CardTitle className="text-2xl text-right text-foreground">💡 نصائح شخصية</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-lg text-muted-foreground text-right leading-relaxed">
+                {(interest as any).advice}
+              </p>
+            </CardContent>
+          </Card>
+        )}
 
         <div className="text-center">
           <Button 
