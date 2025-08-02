@@ -37,10 +37,10 @@ const interests = [
     description: "قد عالم الأعمال والمال"
   },
   {
-    id: "languages",
-    title: "اللغات والآداب",
-    image: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=400&h=250&fit=crop",
-    description: "أطلق قوة الكلمات والتعبير"
+    id: "literature",
+    title: "الأدب واللغات",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop",
+    description: "أطلق قوة الكلمات والتعبير والإبداع الأدبي"
   },
   {
     id: "arts-design",
