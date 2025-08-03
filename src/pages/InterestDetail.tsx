@@ -80,24 +80,93 @@ const interestData = {
     ]
   },
   "mathematics": {
-    title: "الرياضيات والمنطق",
-    description: "الرياضيات هي لغة الكون، تفتح أمامك عالماً من التحليل والمنطق والحلول الإبداعية للمشاكل المعقدة.",
+    title: "Math & Logic – Rational Thinking & Problem Solving",
+    description: "This path suits students who enjoy problem-solving, numbers, and abstract thinking. It opens doors to fields requiring strong analytical skills and logical reasoning.",
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop",
+    introduction: "🧭 This path suits students who enjoy problem-solving, numbers, and abstract thinking. It opens doors to fields requiring strong analytical skills and logical reasoning.",
+    advice: "💡 This path requires discipline, patience, and passion for logical reasoning. It's one of the most promising areas in today's tech-driven world. Mastering it opens doors globally, especially in IT, engineering, and finance.",
     pathways: [
       {
-        name: "الرياضيات التطبيقية",
-        description: "تطبيق المفاهيم الرياضية في مجالات مختلفة",
-        duration: "3-5 سنوات",
-        difficulty: "عالي",
-        institutions: ["كلية العلوم - جامعة محمد الخامس", "المدرسة المحمدية للمهندسين"]
+        name: "Pure Mathematics",
+        description: "Study of abstract mathematical concepts and theoretical foundations",
+        duration: "3-5 years",
+        difficulty: "High",
+        institutions: ["Faculties of Sciences (Mathematics/Physics Departments)"]
       },
       {
-        name: "الإحصاء وعلوم البيانات",
-        description: "تحليل البيانات واستخراج المعلومات المفيدة",
-        duration: "3-5 سنوات",
-        difficulty: "متوسط إلى عالي",
-        institutions: ["المدرسة الوطنية للإحصاء", "كلية العلوم الاقتصادية"]
+        name: "Applied Mathematics",
+        description: "Application of mathematical methods to solve real-world problems",
+        duration: "3-5 years",
+        difficulty: "High",
+        institutions: ["Faculties of Sciences", "Engineering Schools"]
+      },
+      {
+        name: "Statistics & Data Science",
+        description: "Analysis of data to extract meaningful insights and patterns",
+        duration: "3-5 years",
+        difficulty: "Medium to High",
+        institutions: ["Faculties of Sciences", "Private institutes for IT and Data Science"]
+      },
+      {
+        name: "Actuarial Science",
+        description: "Mathematical analysis of risk and uncertainty in insurance and finance",
+        duration: "4-5 years",
+        difficulty: "High",
+        institutions: ["Faculties of Sciences", "Business schools"]
+      },
+      {
+        name: "Computer Science & Programming",
+        description: "Design and development of computer systems and software",
+        duration: "3-5 years",
+        difficulty: "Medium to High",
+        institutions: ["ENSA / ENSAM / FST / EMI / INPT", "Private IT institutes"]
+      },
+      {
+        name: "Engineering Preparatory Classes (CPGE)",
+        description: "Intensive preparation for engineering school entrance exams",
+        duration: "2 years",
+        difficulty: "Very High",
+        institutions: ["CPGE (Classes Préparatoires – Maths Sup/Spé)"]
+      },
+      {
+        name: "Artificial Intelligence & Machine Learning",
+        description: "Development of intelligent systems and learning algorithms",
+        duration: "3-5 years",
+        difficulty: "High",
+        institutions: ["Engineering Schools", "Private institutes for IT and Data Science"]
+      },
+      {
+        name: "Economics & Quantitative Analysis",
+        description: "Mathematical modeling of economic systems and markets",
+        duration: "3-5 years",
+        difficulty: "Medium to High",
+        institutions: ["Faculties of Economics", "Business schools"]
+      },
+      {
+        name: "Physics & Mathematical Modeling",
+        description: "Application of mathematics to understand physical phenomena",
+        duration: "3-5 years",
+        difficulty: "High",
+        institutions: ["Faculties of Sciences (Mathematics/Physics Departments)"]
+      },
+      {
+        name: "Cryptography & Cybersecurity",
+        description: "Mathematical techniques for securing information and communications",
+        duration: "3-5 years",
+        difficulty: "High",
+        institutions: ["Engineering Schools", "Private institutes for IT and Data Science"]
       }
+    ],
+    careers: [
+      "Data Analyst / Data Scientist",
+      "Software Engineer or Developer",
+      "Engineer in various fields",
+      "Actuary in insurance companies",
+      "Statistician in government or business",
+      "AI/ML Engineer",
+      "Teacher or University Researcher",
+      "Cryptographer or Cybersecurity Expert",
+      "Economist or Financial Analyst"
     ]
   },
   "physics-engineering": {
