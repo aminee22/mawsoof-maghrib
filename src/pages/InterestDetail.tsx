@@ -80,93 +80,93 @@ const interestData = {
     ]
   },
   "mathematics": {
-    title: "Math & Logic – Rational Thinking & Problem Solving",
-    description: "This path suits students who enjoy problem-solving, numbers, and abstract thinking. It opens doors to fields requiring strong analytical skills and logical reasoning.",
+    title: "الرياضيات والمنطق - التفكير المنطقي وحل المشاكل",
+    description: "هذا المسار مناسب للطلاب الذين يستمتعون بحل المشاكل والأرقام والتفكير المجرد. يفتح أبواباً للمجالات التي تتطلب مهارات تحليلية قوية ومنطق سليم.",
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop",
-    introduction: "🧭 This path suits students who enjoy problem-solving, numbers, and abstract thinking. It opens doors to fields requiring strong analytical skills and logical reasoning.",
-    advice: "💡 This path requires discipline, patience, and passion for logical reasoning. It's one of the most promising areas in today's tech-driven world. Mastering it opens doors globally, especially in IT, engineering, and finance.",
+    introduction: "🧭 هذا المسار مناسب للطلاب الذين يستمتعون بحل المشاكل والأرقام والتفكير المجرد. يفتح أبواباً للمجالات التي تتطلب مهارات تحليلية قوية ومنطق سليم.",
+    advice: "💡 هذا المسار يتطلب الانضباط والصبر والشغف بالتفكير المنطقي. إنه من أكثر المجالات الواعدة في عالم اليوم المدفوع بالتكنولوجيا. إتقانه يفتح أبواباً عالمياً، خاصة في تكنولوجيا المعلومات والهندسة والمالية.",
     pathways: [
       {
-        name: "Pure Mathematics",
-        description: "Study of abstract mathematical concepts and theoretical foundations",
-        duration: "3-5 years",
-        difficulty: "High",
-        institutions: ["Faculties of Sciences (Mathematics/Physics Departments)"]
+        name: "الرياضيات البحتة",
+        description: "دراسة المفاهيم الرياضية المجردة والأسس النظرية",
+        duration: "3-5 سنوات",
+        difficulty: "عالي",
+        institutions: ["كليات العلوم (أقسام الرياضيات/الفيزياء)"]
       },
       {
-        name: "Applied Mathematics",
-        description: "Application of mathematical methods to solve real-world problems",
-        duration: "3-5 years",
-        difficulty: "High",
-        institutions: ["Faculties of Sciences", "Engineering Schools"]
+        name: "الرياضيات التطبيقية",
+        description: "تطبيق الطرق الرياضية لحل المشاكل الواقعية",
+        duration: "3-5 سنوات",
+        difficulty: "عالي",
+        institutions: ["كليات العلوم", "المدارس الهندسية"]
       },
       {
-        name: "Statistics & Data Science",
-        description: "Analysis of data to extract meaningful insights and patterns",
-        duration: "3-5 years",
-        difficulty: "Medium to High",
-        institutions: ["Faculties of Sciences", "Private institutes for IT and Data Science"]
+        name: "الإحصاء وعلوم البيانات",
+        description: "تحليل البيانات لاستخراج رؤى وأنماط مفيدة",
+        duration: "3-5 سنوات",
+        difficulty: "متوسط إلى عالي",
+        institutions: ["كليات العلوم", "المعاهد الخاصة لتكنولوجيا المعلومات وعلوم البيانات"]
       },
       {
-        name: "Actuarial Science",
-        description: "Mathematical analysis of risk and uncertainty in insurance and finance",
-        duration: "4-5 years",
-        difficulty: "High",
-        institutions: ["Faculties of Sciences", "Business schools"]
+        name: "العلوم الاكتوارية",
+        description: "التحليل الرياضي للمخاطر وعدم اليقين في التأمين والمالية",
+        duration: "4-5 سنوات",
+        difficulty: "عالي",
+        institutions: ["كليات العلوم", "مدارس الأعمال"]
       },
       {
-        name: "Computer Science & Programming",
-        description: "Design and development of computer systems and software",
-        duration: "3-5 years",
-        difficulty: "Medium to High",
-        institutions: ["ENSA / ENSAM / FST / EMI / INPT", "Private IT institutes"]
+        name: "علوم الحاسوب والبرمجة",
+        description: "تصميم وتطوير أنظمة الحاسوب والبرمجيات",
+        duration: "3-5 سنوات",
+        difficulty: "متوسط إلى عالي",
+        institutions: ["ENSA / ENSAM / FST / EMI / INPT", "المعاهد الخاصة لتكنولوجيا المعلومات"]
       },
       {
-        name: "Engineering Preparatory Classes (CPGE)",
-        description: "Intensive preparation for engineering school entrance exams",
-        duration: "2 years",
-        difficulty: "Very High",
-        institutions: ["CPGE (Classes Préparatoires – Maths Sup/Spé)"]
+        name: "الأقسام التحضيرية للهندسة (CPGE)",
+        description: "تحضير مكثف لامتحانات دخول المدارس الهندسية",
+        duration: "سنتان",
+        difficulty: "عالي جداً",
+        institutions: ["CPGE (الأقسام التحضيرية - رياضيات عليا/خاصة)"]
       },
       {
-        name: "Artificial Intelligence & Machine Learning",
-        description: "Development of intelligent systems and learning algorithms",
-        duration: "3-5 years",
-        difficulty: "High",
-        institutions: ["Engineering Schools", "Private institutes for IT and Data Science"]
+        name: "الذكاء الاصطناعي والتعلم الآلي",
+        description: "تطوير الأنظمة الذكية وخوارزميات التعلم",
+        duration: "3-5 سنوات",
+        difficulty: "عالي",
+        institutions: ["المدارس الهندسية", "المعاهد الخاصة لتكنولوجيا المعلومات وعلوم البيانات"]
       },
       {
-        name: "Economics & Quantitative Analysis",
-        description: "Mathematical modeling of economic systems and markets",
-        duration: "3-5 years",
-        difficulty: "Medium to High",
-        institutions: ["Faculties of Economics", "Business schools"]
+        name: "الاقتصاد والتحليل الكمي",
+        description: "النمذجة الرياضية للأنظمة الاقتصادية والأسواق",
+        duration: "3-5 سنوات",
+        difficulty: "متوسط إلى عالي",
+        institutions: ["كليات الاقتصاد", "مدارس الأعمال"]
       },
       {
-        name: "Physics & Mathematical Modeling",
-        description: "Application of mathematics to understand physical phenomena",
-        duration: "3-5 years",
-        difficulty: "High",
-        institutions: ["Faculties of Sciences (Mathematics/Physics Departments)"]
+        name: "الفيزياء والنمذجة الرياضية",
+        description: "تطبيق الرياضيات لفهم الظواهر الفيزيائية",
+        duration: "3-5 سنوات",
+        difficulty: "عالي",
+        institutions: ["كليات العلوم (أقسام الرياضيات/الفيزياء)"]
       },
       {
-        name: "Cryptography & Cybersecurity",
-        description: "Mathematical techniques for securing information and communications",
-        duration: "3-5 years",
-        difficulty: "High",
-        institutions: ["Engineering Schools", "Private institutes for IT and Data Science"]
+        name: "التشفير وأمن المعلومات",
+        description: "التقنيات الرياضية لتأمين المعلومات والاتصالات",
+        duration: "3-5 سنوات",
+        difficulty: "عالي",
+        institutions: ["المدارس الهندسية", "المعاهد الخاصة لتكنولوجيا المعلومات وعلوم البيانات"]
       }
     ],
     careers: [
-      "Data Analyst / Data Scientist",
-      "Software Engineer or Developer",
-      "Engineer in various fields",
-      "Actuary in insurance companies",
-      "Statistician in government or business",
-      "AI/ML Engineer",
-      "Teacher or University Researcher",
-      "Cryptographer or Cybersecurity Expert",
-      "Economist or Financial Analyst"
+      "محلل بيانات / عالم بيانات",
+      "مهندس برمجيات أو مطور",
+      "مهندس في مختلف المجالات",
+      "اكتواري في شركات التأمين",
+      "إحصائي في الحكومة أو الأعمال",
+      "مهندس ذكاء اصطناعي/تعلم آلي",
+      "مدرس أو باحث جامعي",
+      "خبير تشفير أو أمن معلومات",
+      "اقتصادي أو محلل مالي"
     ]
   },
   "physics-engineering": {
