@@ -14,7 +14,11 @@ import {
   Library,
   Users,
   TrendingUp,
-  Award
+  Award,
+  Heart,
+  Brain,
+  Compass,
+  Star
 } from "lucide-react"
 import { Link } from "react-router-dom"
 import heroBackground from "@/assets/hero-background.jpg"
@@ -24,147 +28,242 @@ import careerBg from "@/assets/career-bg.jpg"
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-background rtl">
+      {/* Welcome Section */}
+      <section className="relative py-16 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            اكتشف مستقبلك مع منصة <span className="text-primary">موصوف</span>
+          </h1>
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
+            منصة ذكية تساعدك على اختيار المسار الأنسب لك، بناءً على ميولاتك، ونتائجك الدراسية، وسوق الشغل
+          </p>
+          <div className="flex gap-4 justify-center flex-wrap">
+            <Link to="/choose-interests">
+              <Button size="lg" className="gradient-primary text-white hover:scale-105 shadow-elegant px-8 py-4 text-lg font-semibold transition-smooth rounded-lg">
+                🎯 ابدأ الآن
+              </Button>
+            </Link>
+            <Link to="/useful-resources">
+              <Button size="lg" variant="outline" className="hover:scale-105 px-8 py-4 text-lg font-semibold transition-smooth rounded-lg">
+                📚 اكتشف المزيد
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Hero Section */}
       <section 
-        className="relative py-40 text-center overflow-hidden"
+        className="relative py-32 text-center overflow-hidden"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url(${heroBackground})`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url(${heroBackground})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed'
         }}
       >
         <div className="relative z-10 max-w-5xl mx-auto px-6 animate-fade-in-up">
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 drop-shadow-2xl leading-tight">
-            بوابة التوجيه التربوي
-          </h1>
-          <p className="text-xl md:text-2xl text-white/95 mb-12 leading-relaxed max-w-4xl mx-auto drop-shadow-lg">
-            منصة شاملة لتوجيه الطلاب المغاربة نحو أفضل الخيارات الدراسية والمهنية مع أحدث المعلومات والموارد التعليمية
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-2xl">
+            رحلتك التعليمية تبدأ هنا
+          </h2>
+          <p className="text-lg md:text-xl text-white/95 mb-10 leading-relaxed max-w-3xl mx-auto drop-shadow-lg">
+            استكشف المسارات المتاحة أمامك واتخذ القرارات الصحيحة لمستقبل مشرق
           </p>
-          <div className="flex gap-6 justify-center flex-wrap">
-            <Link to="/choose-interests">
-              <Button size="lg" className="gradient-primary text-white hover:scale-110 shadow-elegant px-12 py-5 text-xl font-bold transition-smooth border-0 rounded-full hover:shadow-glow">
-                🎯 ابدأ رحلة التوجيه
-              </Button>
-            </Link>
-            <Link to="/useful-resources">
-              <Button size="lg" variant="outline" className="text-white border-2 border-white hover:bg-white/30 hover:scale-110 backdrop-blur-sm px-12 py-5 text-xl font-bold transition-smooth rounded-full">
-                📚 تعرف أكثر
-              </Button>
-            </Link>
-          </div>
         </div>
       </section>
 
       {/* Navigation Cards */}
-      <section 
-        className="relative py-20 overflow-hidden"
-        style={{
-          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9)), url(${educationBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}
-      >
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <h2 className="text-5xl font-bold text-center text-foreground mb-6">
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-4">
             اختر مسارك التعليمي
           </h2>
-          <p className="text-center text-muted-foreground mb-16 text-xl max-w-3xl mx-auto">
-            استكشف الخيارات المتاحة أمامك واتخذ القرار الصحيح لمستقبلك
+          <p className="text-center text-muted-foreground mb-16 text-lg max-w-3xl mx-auto">
+            رحلة منظمة حسب مسارك الدراسي - من الإعدادي إلى سوق الشغل
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 animate-fade-in-up">
-            <Link to="/post-middle-school" className="transform transition-all duration-300 hover:-translate-y-2">
-              <HeroCard
-                title="🎓 ما بعد الإعدادي"
-                description="تعرف على الشعب والمسارات المتاحة بعد إنهاء المرحلة الإعدادية وحدد مستقبلك التعليمي"
-                icon={<School />}
-                gradient="primary"
-              />
-            </Link>
-            
-            <Link to="/post-baccalaureate" className="transform transition-all duration-300 hover:-translate-y-2">
-              <HeroCard
-                title="🏆 ما بعد الباكالوريا"
-                description="اكتشف الجامعات والمعاهد العليا والمسارات المهنية المتاحة واختر التخصص المناسب"
-                icon={<Award />}
-                gradient="secondary"
-              />
-            </Link>
-            
-            <Link to="/job-market" className="transform transition-all duration-300 hover:-translate-y-2">
-              <HeroCard
-                title="💼 سوق الشغل"
-                description="تعرف على الفرص المهنية والوظائف المطلوبة في السوق المغربي والمهارات المطلوبة"
-                icon={<Target />}
-                gradient="hero"
-              />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {/* ما بعد الإعدادي */}
+            <Link to="/post-middle-school" className="group">
+              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-6 border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-xl mb-4 mx-auto">
+                  <School className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-center mb-3 text-foreground">ما بعد الإعدادي</h3>
+                <p className="text-muted-foreground text-center text-sm mb-4 leading-relaxed">
+                  اكتشف الشعب والمسارات بعد الثالثة إعدادي
+                </p>
+                <Button className="w-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-all">
+                  ابدأ الاستكشاف
+                </Button>
+              </div>
             </Link>
 
-            <Link to="/useful-resources" className="transform transition-all duration-300 hover:-translate-y-2">
-              <HeroCard
-                title="📚 الموارد المفيدة"
-                description="روابط ومصادر تعليمية وتوجيهية تساعد الطلاب في اكتشاف الفرص الدراسية والمهنية"
-                icon={<Library />}
-                gradient="primary"
-              />
+            {/* ما بعد الباكالوريا */}
+            <Link to="/post-baccalaureate" className="group">
+              <div className="bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-2xl p-6 border border-secondary/20 hover:border-secondary/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-secondary to-secondary/80 rounded-xl mb-4 mx-auto">
+                  <Award className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-center mb-3 text-foreground">ما بعد الباكالوريا</h3>
+                <p className="text-muted-foreground text-center text-sm mb-4 leading-relaxed">
+                  الجامعات والمعاهد والتخصصات المتاحة
+                </p>
+                <Button className="w-full bg-secondary/10 text-secondary hover:bg-secondary hover:text-white transition-all">
+                  استكشف التخصصات
+                </Button>
+              </div>
             </Link>
 
-            <Link to="/personal-tips" className="transform transition-all duration-300 hover:-translate-y-2">
-              <HeroCard
-                title="💡 نصائح شخصية"
-                description="نصائح موجهة من خبراء التوجيه الدراسي لمساعدتك في اختيار المسار الأنسب حسب قدراتك"
-                icon={<Lightbulb />}
-                gradient="secondary"
-              />
+            {/* سوق الشغل */}
+            <Link to="/job-market" className="group">
+              <div className="bg-gradient-to-br from-accent/10 to-accent/5 rounded-2xl p-6 border border-accent/20 hover:border-accent/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-accent to-accent/80 rounded-xl mb-4 mx-auto">
+                  <Briefcase className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-center mb-3 text-foreground">سوق الشغل</h3>
+                <p className="text-muted-foreground text-center text-sm mb-4 leading-relaxed">
+                  الفرص المهنية والمهارات المطلوبة
+                </p>
+                <Button className="w-full bg-accent/10 text-accent hover:bg-accent hover:text-white transition-all">
+                  اكتشف الفرص
+                </Button>
+              </div>
+            </Link>
+
+            {/* الميولات الشخصية */}
+            <Link to="/choose-interests" className="group">
+              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-6 border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-xl mb-4 mx-auto">
+                  <Heart className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-center mb-3 text-foreground">الميولات الشخصية</h3>
+                <p className="text-muted-foreground text-center text-sm mb-4 leading-relaxed">
+                  اكتشف ميولاتك واهتماماتك الحقيقية
+                </p>
+                <Button className="w-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-all">
+                  اختبر ميولاتك
+                </Button>
+              </div>
+            </Link>
+          </div>
+
+          {/* الصف الثاني من البطاقات */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+            {/* التخصصات والمسارات */}
+            <Link to="/interest-detail" className="group">
+              <div className="bg-gradient-to-br from-muted/50 to-muted/30 rounded-2xl p-6 border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-foreground/80 to-foreground/60 rounded-xl mb-4 mx-auto">
+                  <Compass className="w-8 h-8 text-background" />
+                </div>
+                <h3 className="text-xl font-bold text-center mb-3 text-foreground">التخصصات والمسارات</h3>
+                <p className="text-muted-foreground text-center text-sm mb-4 leading-relaxed">
+                  دليل شامل للتخصصات المختلفة
+                </p>
+                <Button variant="outline" className="w-full hover:bg-foreground hover:text-background transition-all">
+                  استكشف التخصصات
+                </Button>
+              </div>
+            </Link>
+
+            {/* الموارد المفيدة */}
+            <Link to="/useful-resources" className="group">
+              <div className="bg-gradient-to-br from-muted/50 to-muted/30 rounded-2xl p-6 border border-border hover:border-secondary/30 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-secondary/80 to-secondary/60 rounded-xl mb-4 mx-auto">
+                  <Library className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-center mb-3 text-foreground">الموارد المفيدة</h3>
+                <p className="text-muted-foreground text-center text-sm mb-4 leading-relaxed">
+                  مصادر ومراجع تعليمية مفيدة
+                </p>
+                <Button variant="outline" className="w-full hover:bg-secondary hover:text-white transition-all">
+                  تصفح المصادر
+                </Button>
+              </div>
+            </Link>
+
+            {/* نصائح شخصية */}
+            <Link to="/personal-tips" className="group">
+              <div className="bg-gradient-to-br from-muted/50 to-muted/30 rounded-2xl p-6 border border-border hover:border-accent/30 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-accent/80 to-accent/60 rounded-xl mb-4 mx-auto">
+                  <Lightbulb className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-center mb-3 text-foreground">نصائح شخصية</h3>
+                <p className="text-muted-foreground text-center text-sm mb-4 leading-relaxed">
+                  نصائح من خبراء التوجيه المهني
+                </p>
+                <Button variant="outline" className="w-full hover:bg-accent hover:text-white transition-all">
+                  احصل على النصائح
+                </Button>
+              </div>
             </Link>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section 
-        className="relative py-20 overflow-hidden"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.03)), url(${careerBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}
-      >
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <h2 className="text-5xl font-bold text-center text-foreground mb-16">
-            لماذا تختار منصتنا؟
-          </h2>
+      <section className="py-20 bg-gradient-to-br from-muted/30 to-background">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              لماذا تختار منصة موصوف؟
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              نحن نوفر لك كل ما تحتاجه لاتخاذ القرار الصحيح حول مستقبلك
+            </p>
+          </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div className="text-center p-10 rounded-3xl bg-white/90 backdrop-blur-sm shadow-elegant hover:shadow-strong transition-smooth border border-primary/10">
-              <div className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full gradient-primary shadow-lg">
-                <Users className="text-white h-10 w-10" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* توجيه مخصص */}
+            <div className="text-center group">
+              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-2">
+                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary/80 shadow-lg">
+                  <Compass className="text-white h-8 w-8" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-4">🧭 توجيه مخصص</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  خطة توجيه مصممة خصيصاً حسب ميولاتك وقدراتك
+                </p>
               </div>
-              <h3 className="text-3xl font-bold text-foreground mb-6">توجيه متخصص</h3>
-              <p className="text-muted-foreground leading-relaxed text-lg">
-                احصل على إرشادات من خبراء في التوجيه المدرسي والمهني
-              </p>
             </div>
             
-            <div className="text-center p-10 rounded-3xl bg-white/90 backdrop-blur-sm shadow-elegant hover:shadow-strong transition-smooth border border-accent/10">
-              <div className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full gradient-secondary shadow-lg">
-                <TrendingUp className="text-white h-10 w-10" />
+            {/* معلومات محدثة */}
+            <div className="text-center group">
+              <div className="bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-2xl p-8 border border-secondary/20 hover:border-secondary/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-2">
+                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-secondary to-secondary/80 shadow-lg">
+                  <TrendingUp className="text-white h-8 w-8" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-4">📊 معلومات محدثة</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  بيانات حديثة ومحدثة باستمرار عن الجامعات وسوق العمل
+                </p>
               </div>
-              <h3 className="text-3xl font-bold text-foreground mb-6">معلومات محدثة</h3>
-              <p className="text-muted-foreground leading-relaxed text-lg">
-                آخر المستجدات حول الجامعات والمعاهد وسوق العمل في المغرب
-              </p>
             </div>
             
-            <div className="text-center p-10 rounded-3xl bg-white/90 backdrop-blur-sm shadow-elegant hover:shadow-strong transition-smooth border border-primary/10">
-              <div className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full gradient-hero shadow-lg">
-                <Award className="text-white h-10 w-10" />
+            {/* فرص مهنية */}
+            <div className="text-center group">
+              <div className="bg-gradient-to-br from-accent/10 to-accent/5 rounded-2xl p-8 border border-accent/20 hover:border-accent/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-2">
+                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent/80 shadow-lg">
+                  <Star className="text-white h-8 w-8" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-4">💼 فرص مهنية</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  اكتشف المهن الواعدة والقطاعات الناشئة في المغرب
+                </p>
               </div>
-              <h3 className="text-3xl font-bold text-foreground mb-6">فرص مهنية</h3>
-              <p className="text-muted-foreground leading-relaxed text-lg">
-                اكتشف المهن الواعدة والمسارات المطلوبة في المستقبل
-              </p>
+            </div>
+            
+            {/* دعم في اختيار التخصص */}
+            <div className="text-center group">
+              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-2">
+                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary/80 shadow-lg">
+                  <Brain className="text-white h-8 w-8" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-4">🎓 دعم في اختيار التخصص</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  مساعدة شخصية لاختيار التخصص الأنسب لشخصيتك
+                </p>
+              </div>
             </div>
           </div>
         </div>
