@@ -1,6 +1,6 @@
+import React from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
@@ -17,10 +17,8 @@ import Favorites from "./pages/Favorites";
 import SmartGuidance from "./pages/SmartGuidance";
 import NotFound from "./pages/NotFound";
 
-const queryClient = new QueryClient();
-
 const App = () => (
-  <QueryClientProvider client={queryClient}>
+  <React.Fragment>
     <Toaster />
     <Sonner />
     <BrowserRouter>
@@ -45,7 +43,6 @@ const App = () => (
                   <Route path="/interests/:id" element={<InterestDetail />} />
                   <Route path="/favorites" element={<Favorites />} />
                   <Route path="/smart-guidance" element={<SmartGuidance />} />
-                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </main>
@@ -54,7 +51,7 @@ const App = () => (
         } />
       </Routes>
     </BrowserRouter>
-  </QueryClientProvider>
+  </React.Fragment>
 );
 
 export default App;
