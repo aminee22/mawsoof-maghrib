@@ -15,6 +15,7 @@ import UsefulResources from "./pages/UsefulResources";
 import ChooseInterests from "./pages/ChooseInterests";
 import InterestDetail from "./pages/InterestDetail";
 import Favorites from "./pages/Favorites";
+import SmartGuidance from "./pages/SmartGuidance";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -45,6 +46,7 @@ const App = () => (
                     <Route path="/choose-interests" element={<ChooseInterests />} />
                     <Route path="/interests/:id" element={<InterestDetail />} />
                     <Route path="/favorites" element={<Favorites />} />
+                    <Route path="/smart-guidance" element={<SmartGuidance />} />
                     {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                     <Route path="*" element={<NotFound />} />
                   </Routes>

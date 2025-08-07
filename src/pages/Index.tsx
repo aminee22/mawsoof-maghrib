@@ -38,9 +38,9 @@ const Index = () => {
             منصة ذكية تساعدك على اختيار المسار الأنسب لك، بناءً على ميولاتك، ونتائجك الدراسية، وسوق الشغل
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <Link to="/choose-interests">
+            <Link to="/smart-guidance">
               <Button size="lg" className="gradient-primary text-white hover:scale-105 shadow-elegant px-8 py-4 text-lg font-semibold transition-smooth rounded-lg">
-                🎯 ابدأ الآن
+                🎯 المستشار الذكي
               </Button>
             </Link>
             <Link to="/useful-resources">
@@ -150,18 +150,18 @@ const Index = () => {
 
           {/* الصف الثاني من البطاقات */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-            {/* التخصصات والمسارات */}
-            <Link to="/interest-detail" className="group">
+            {/* المستشار الذكي */}
+            <Link to="/smart-guidance" className="group">
               <div className="bg-gradient-to-br from-muted/50 to-muted/30 rounded-2xl p-6 border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-foreground/80 to-foreground/60 rounded-xl mb-4 mx-auto">
                   <Compass className="w-8 h-8 text-background" />
                 </div>
-                <h3 className="text-xl font-bold text-center mb-3 text-foreground">التخصصات والمسارات</h3>
+                <h3 className="text-xl font-bold text-center mb-3 text-foreground">المستشار الذكي</h3>
                 <p className="text-muted-foreground text-center text-sm mb-4 leading-relaxed">
-                  دليل شامل للتخصصات المختلفة
+                  نظام توجيه ذكي حسب ملفك الشخصي
                 </p>
                 <Button variant="outline" className="w-full hover:bg-foreground hover:text-background transition-all">
-                  استكشف التخصصات
+                  استكشف النظام الذكي
                 </Button>
               </div>
             </Link>
