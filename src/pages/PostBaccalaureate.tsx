@@ -506,14 +506,14 @@ const PostBaccalaureate = () => {
         {/* Call to Action */}
         <Card className="shadow-medium gradient-soft border-primary/20">
           <CardContent className="p-8 text-center">
-            <h3 className="text-2xl font-bold mb-4">هل لديك سؤال محدد؟</h3>
+            <h3 className="text-2xl font-bold mb-4">هل لديك سؤال؟</h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
               إذا كان لديك أي استفسار حول التوجيه أو تحتاج لمساعدة شخصية في اختيار المسار المناسب، 
-              لا تتردد في ملء الاستبيان المخصص
+              لا تتردد في التواصل معنا
             </p>
             <Button size="lg" className="gradient-primary hover:opacity-90 transition-smooth" asChild>
-              <a href="https://forms.gle/cifWM3Ty7vevX2vS8" target="_blank" rel="noopener noreferrer">
-                💬 استبيان مخصص للتوجيه
+              <a href="https://forms.gle/h7SZnb1nSgLHgVkQA" target="_blank" rel="noopener noreferrer">
+                هل لديك سؤال؟
                 <ArrowRight className="mr-2 h-5 w-5" />
               </a>
             </Button>

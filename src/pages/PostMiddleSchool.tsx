@@ -312,12 +312,12 @@ const PostMiddleSchool = () => {
         {/* Question Button */}
         <div className="text-center">
           <a 
-            href="https://forms.gle/cifWM3Ty7vevX2vS8" 
+            href="https://forms.gle/h7SZnb1nSgLHgVkQA" 
             target="_blank" 
             rel="noopener noreferrer"
           >
             <Button size="lg" className="gradient-primary hover:opacity-90 transition-smooth">
-              💬 هل لديك أسئلة أخرى؟ استبيان مخصص
+              هل لديك سؤال؟
             </Button>
           </a>
         </div>

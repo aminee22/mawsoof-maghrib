@@ -36,7 +36,7 @@ export function AppSidebar() {
     isActive ? "bg-primary/10 text-primary font-semibold border-l-2 border-primary" : "hover:bg-accent/10 transition-all duration-200"
 
   const handleQuestionClick = () => {
-    window.open("https://forms.gle/cifWM3Ty7vevX2vS8", "_blank");
+    window.open("https://forms.gle/h7SZnb1nSgLHgVkQA", "_blank");
   };
 
   return (

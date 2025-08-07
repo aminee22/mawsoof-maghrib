@@ -318,7 +318,7 @@ const JobMarket = () => {
               إذا كان لديك أي استفسار حول سوق العمل أو تحتاج لمساعدة في اختيار مسارك المهني
             </p>
             <Button size="lg" className="gradient-primary hover:opacity-90 transition-smooth" asChild>
-              <a href="https://forms.gle/cifWM3Ty7vevX2vS8" target="_blank" rel="noopener noreferrer">
+              <a href="https://forms.gle/h7SZnb1nSgLHgVkQA" target="_blank" rel="noopener noreferrer">
                 <ArrowRight className="mr-2 h-5 w-5" />
                 هل لديك سؤال؟
               </a>

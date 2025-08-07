@@ -78,7 +78,7 @@ const UsefulResources = () => {
   };
 
   const handleQuestionClick = () => {
-    window.open('https://forms.gle/cifWM3Ty7vevX2vS8', '_blank');
+    window.open('https://forms.gle/h7SZnb1nSgLHgVkQA', '_blank');
   };
 
   return (
